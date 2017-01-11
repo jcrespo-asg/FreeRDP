@@ -1290,8 +1290,8 @@ static UINT cliprdr_send_format_list(wfClipboard* clipboard)
 	for (index = 0; index < numFormats; index++)
 	{
 		if (GetClipboardFormatName(formats[index].formatId,
-								formatName,
-		                        sizeof(formatName)))
+			                       formatName,
+			                       sizeof(formatName)))
 		{
 			int size = MultiByteToWideChar(CP_UTF8, 0, formatName,
 						strlen(formatName),
@@ -1302,7 +1302,7 @@ static UINT cliprdr_send_format_list(wfClipboard* clipboard)
 			if (formats[index].formatName)
 			{
 				MultiByteToWideChar(CP_UTF8, 0, formatName, strlen(formatName),
-					formats[index].formatName, size);
+				                    formats[index].formatName, size);
 			}
 		}
 	}
